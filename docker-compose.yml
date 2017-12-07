@@ -1,0 +1,15 @@
+version: "2"
+services:
+  web:
+    build: .
+    ports:
+      - "8600:8600"
+    links:
+      - cassandra
+  cassandra:
+    image: cassandra:2.1
+    volumes:
+    ##<path-containing-cassandra-data>:<path-in-container-that-links-to-the-data-folder-in-host>
+     - /Users/soali/data:/var/lib/cassandra
+    ports:
+     - "9042:9042"
