@@ -2,8 +2,8 @@ var Hapi = require('hapi');
 var inert = require('inert');
 var vision = require('vision');
 var routes = require('./route');
-//var handlebarsHelpers = require("handlebars-helpers");
-//var _ = require("lodash");
+var handlebarsHelpers = require("handlebars-helpers");
+var _ = require("lodash");
 
 var server = new Hapi.Server();
 server.connection({ port: 8600 });
@@ -21,9 +21,9 @@ const serverViews = server.views({
     //helpersPath: 'server/views/helpers'
 });
 
-// _.forEach(handlebarsHelpers, (value, key) => {
-//     serverViews.registerHelper(key, value)
-// });
+_.forEach(handlebarsHelpers, (value, key) => {
+     serverViews.registerHelper(key, value)
+});
 
 server.route(routes);
 server.start(function () {

@@ -10,6 +10,6 @@ services:
     image: cassandra:2.1
     volumes:
     ##<path-containing-cassandra-data>:<path-in-container-that-links-to-the-data-folder-in-host>
-     - /Users/soali/data:/var/lib/cassandra
+     - /Users/rns/data:/var/lib/cassandra
     ports:
      - "9042:9042"

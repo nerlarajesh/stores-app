@@ -10,6 +10,7 @@
   "dependencies": {
     "cassandra-driver": "3.3.0",
     "handlebars": "^4.0.11",
+    "handlebars-helpers": "1.4.0",
     "hapi": "13.2.1",
     "inert": "4.2.1",
     "lodash": "^4.17.4",
