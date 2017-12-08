@@ -3,33 +3,27 @@
     <div class="js-product-list product-list">
         <div class="grid-100 grid-parent v-spacing-large">
     <ul>
-        {{#if productList}}
-        {{#each productList}}
-            <li {{#if @first}}aria-live="polite"{{/if}} class="product-wrapper grid-25 tablet-grid-33 v-spacing-large" id="product-{{productId}}" data-productid="{{productId}}" data-producttitle="{{title}}" data-productreviews="{{reviewCount}}" data-productimg="{{findReplace imageUrls.sm 'http:' ''}}" data-producturl="{{url}}" data-row="1" tabindex="0">
+        {{#if trendProductList}}
+        {{#each trendProductList}}
+            <li {{#if @first}}aria-live="polite"{{/if}} class="product-wrapper grid-25 tablet-grid-33 v-spacing-large" id="product-{{productId}}" data-productid="{{productId}}" data-producttitle="{{description}}" data-productreviews="{{reviewCount}}" data-row="1" tabindex="0">
                     <div class="product-container js-product-container">
-                        <a href="/pd/Whirlpool-24-5-cu-ft-4-Door-French-Door-Refrigerator-with-Ice-Maker-Fingerprint-Resistant-Stainless-Steel-ENERGY-STAR/1000257811" class="display-block" tabindex="-1">
+                        <a href="/pd/{{description}}{{productId}}" class="display-block" tabindex="-1">
                             <div class="normalize-size position-relative v-spacing-small" tabindex="-1">
-                                    <div class="pl-energy-badge">
-                                        <img src="//lda.lowes.com/is/image/Lowes/estar_detail?$alpha$&amp;wid=20" alt="Energy Star Qualified">
-                                    </div>
-                                <img class="js-pl-lazy-load-image product-image normalize-size img-fluid art-pl-productImage{{@index}}" alt="Whirlpool 24.5-cu ft 4-Door French Door Refrigerator with Ice Maker (Fingerprint-Resistant Stainless Steel) ENERGY STAR" src="https://mobileimages.lowes.com/product/converted/883049/883049445533lg.jpg" data-src="{{findReplace imageUrls.lg 'http:' ''}}">
+                                <img class="js-pl-lazy-load-image product-image normalize-size img-fluid art-pl-productImage{{@index}}" alt="{{description}}" src="{{imageUrls.sm}}">
                             </div>
                             <div class="pvs pvs-options-height v-spacing-small"></div>
                             <p class="h6 product-title js-product-title v-spacing-small ellipsis-three-line" tabindex="-1">
-                                {{title}} title
+                                {{description}}
                             </p>
                         </a>
                         <div class="pl-price js-pl-price" tabindex="-1">
                                 <!-- Map Price -->
                                 <div class="v-spacing-mini"></div>
-                                    <span class="strong">$249.00</span>
+                                    <span class="strong">{{pricing.price.selling}}</span>
                                 </div>
                                 <div class="v-spacing-mini">
                                     <span class="darkMidGrey">was: {{networkPrice}}</span>
                                 </div>
-                                    <div class="v-spacing-mini">
-                                        <span class="green">Ends 12/20/2017</span>
-                                    </div>
                             <!-- Start of Product Family Pricing -->
                             <!-- End of Product Family Pricing -->
                         </div>

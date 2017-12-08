@@ -23,7 +23,7 @@ var routes = [
             client.execute(query, [28117],{prepare: true},function(err,result) {
                 console.log(err);
                 console.log("result is", result.rows);
-                res.render('cassandraResponse', { result:result.rows});
+                reply.view('mainContent', { result:result.rows});
         
             });
         }
