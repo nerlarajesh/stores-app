@@ -11,23 +11,6 @@
                     <div class="v-spacing-medium">
                         <h4 class="modal-title">Find a Store</h4>
                     </div>
-                    <form id="store-locator-form" class="js-store-locator-form">
-                        <input type="hidden" name="latitude" value="35.2054902">
-                        <input type="hidden" name="longitude" value="-80.86117008">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <input id="search-box" type="text" name="searchTerm" class="form-control"
-                                       aria-describedby="ada-storelocator-describedby"
-                                       aria-labelledby="ada-storelocator-describedby"
-                                       placeholder="ZIP Code or City, State" autocompletetype="storelocator"
-                                       autofocus="">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default btn-primary" data-linkid="find-a-store-mechanism"
-                                            type="submit">Find</button>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
             <div class="js-SL-modal-body">
@@ -45,6 +28,7 @@
                                         </address>
                                     </div>
                                     <div class="media-right media-middle">
+                                        <div class="spinner-div loading-spinner" style="display: none;"></div>
                                         <button data-linkid="shop-this-store" data-store-number="595"
                                                 class="store-locator-select btn btn-primary btn-small">Shop
                                             This Store
@@ -64,6 +48,7 @@
                                         </address>
                                     </div>
                                     <div class="media-right media-middle">
+                                        <div class="spinner-div loading-spinner" style="display: none;"></div>
                                         <button data-linkid="shop-this-store" data-store-number="2529"
                                                 class="store-locator-select btn btn-primary btn-small">Shop
                                             This Store
@@ -73,13 +58,6 @@
                                 <hr class="v-spacing-small background-grey">
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <div class="modal-footer trench clean trench-medium js-sL-modal-footer-hide">
-                    <div class="align-center">
-                        <form class="js-store-locator-view-more-stores" action="#">
-                            <button class="btn btn-secondary" type="submit">View More</button>
-                        </form>
                     </div>
                 </div>
             </div>

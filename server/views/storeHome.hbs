@@ -29,6 +29,14 @@
         #header-block {
             margin-bottom: 2em
         }
+        .product-wrapper {
+            height: 360px;
+            position: relative;
+        }
+        .free-align{
+            position:absolute;
+            bottom:0px;
+        }
     </style>
     <!-- ESI cdn link include for www -->
     <link rel="stylesheet" href='https://www.lowescdn.com/www/cq/5.0.19/clientlibs/lowes-mobile-first/commons.min.css' type="text/css">
@@ -222,7 +230,7 @@
                                                         <div class="accessmylowes">
                                                             <div class="signin-container">
                                                                 <div class="js-accessmylowes account-carousel" data-message="<p>Thanks!</p>
-                                                                    <p>Check your email for a link to reset your password. <strong> The link will expire in 30 minutes. </strong> If you don't see the email, be sure to check your spam and junk mail folders.</p>
+                                                                    <p>Check your email for a link to reset your password. <strong> The link will expire in 30 minutes. </strong> If you don't see the email, be sure to check your spam and junk mail folders.</p>">
                                                                     <div class="grid-100 tablet-grid-100 mobile-grid-100">
                                                                         <div class="js-account-login">
                                                                             <span id="ada-login-form-labelledby" class="ada screen-reader-only">Login</span>
@@ -1078,8 +1086,10 @@
             $("#store-locator-modal").modal('show');
         });
         $('.store-locator-select').on('click', function (e) {
+            var _this = $(this);
             //e.preventDefault();
-
+            $(this).hide();
+            $(this).parent().children('.loading-spinner').show();
             var storeNumber = $(this).attr('data-store-number');
             var storeName = $(this).parents('li').find('a').attr('title');
             var url = '/store/' + storeNumber + '/' + storeName;
@@ -1093,6 +1103,8 @@
                     //console.log(resp);
                     $('.js-store-name').html(storeName);
                     //console.log("maincontent ==== ", $(".js-maincontent"));
+                    _this.show();
+                    _this.parent().children('.loading-spinner').hide();
                     $(".js-maincontent").html(resp);
                 },
                 error: function (resp) {
