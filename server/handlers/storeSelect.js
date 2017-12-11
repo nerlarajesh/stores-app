@@ -7,7 +7,7 @@ const indexHandler = (request, reply) => {
 };
 
 const storeSelect = (request, reply) => {
-    var Obj = [{tablename:'trends_table',section:'trendProductList'},{tablename:'weather_table',section:'weatherProductList'}];
+    var Obj = [{tablename:'trends_table',section:'trendProductList'},{tablename:'weather_table',section:'weatherProductList'},{tablename:'stores_table',section:'storeProductList'}];
     _.forEach(Obj, (value, key) => {
         generalizeAPICall(request,reply,value.tablename,value.section,key);
     });
@@ -41,7 +41,7 @@ function generalizeAPICall(request,reply,tablename,productListSection,key){
                     finalData = JSON.parse(finalData);
                     resData[productListSection] = finalData.productList;
                     setTimeout(function(){
-                        if(key == 1){
+                        if(key == 2){
                             reply.view('mainContent',resData);
                         }
                     },1000);
