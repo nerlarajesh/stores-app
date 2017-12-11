@@ -44,9 +44,8 @@ function generalizeAPICall(request,reply,tablename,productListSection,key){
                         if(key == 2){
                             reply.view('mainContent',resData);
                         }
-                    },1000);
+                    },500);
                 });
-                console.log(resData);
               }).end();
     
         } else {

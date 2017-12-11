@@ -37,6 +37,9 @@
             position:absolute;
             bottom:0px;
         }
+        .loading-spinner{
+            margin-right: 62px !important;
+        }
     </style>
     <!-- ESI cdn link include for www -->
     <link rel="stylesheet" href='https://www.lowescdn.com/www/cq/5.0.19/clientlibs/lowes-mobile-first/commons.min.css' type="text/css">
@@ -156,7 +159,7 @@
                                         </a>
                                     </div>
                                     <div class="media-body">
-                                        <span>Welcome to Lowe's</span>
+                                        <span class="js-welcome-note">Welcome to Lowe's</span>
                                         <br>
                                         <a href="#store-locator-modal" data-linkid="find_a_store" class="js-find-a-store" id="find_store">
                                             <span class="js-store-name">Find a Store
@@ -1101,6 +1104,8 @@
                 success: function (resp) {
                     $('#store-locator-modal').modal('hide');
                     //console.log(resp);
+                    $('.icon-location').remove();
+                    $('.js-welcome-note').html('Open until 10PM!');
                     $('.js-store-name').html(storeName);
                     //console.log("maincontent ==== ", $(".js-maincontent"));
                     _this.show();
